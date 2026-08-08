@@ -199,8 +199,8 @@ nav.menu a.active{background:linear-gradient(120deg,var(--blue),var(--orange));c
 .split .imgwrap img{border-radius:26px;box-shadow:var(--shadow-lg);height:440px;width:100%;object-fit:cover}
 .split .imgwrap .accent{position:absolute;inset:-16px 16px 16px -16px;border:2px solid var(--orange);border-radius:26px;z-index:-1;opacity:.35}
 .checklist{list-style:none;display:grid;gap:12px;margin-top:22px}
-.checklist li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-soft);font-size:.97rem}
-.checklist li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--blue-tint) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%231c4fd8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') center/12px no-repeat}
+.checklist li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-soft);font-size:.97rem}
+.checklist li i.luc{flex:none;width:22px;height:22px;color:var(--blue);margin-top:3px;stroke-width:2.6}
 
 /* ============ VIDEO FEATURE ============ */
 .video-feature{background:#0d1420;color:#f5f1e8;border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-lg)}
@@ -212,9 +212,9 @@ nav.menu a.active{background:linear-gradient(120deg,var(--blue),var(--orange));c
 .video-wrap video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .play-overlay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,14,20,.35);transition:opacity .4s;cursor:pointer;z-index:2}
 .play-overlay.hidden{opacity:0;pointer-events:none}
+.play-btn i[data-lucide]{width:30px;height:30px;color:#fff;fill:#fff;stroke-width:0;margin-left:5px}
 .play-btn{width:84px;height:84px;border-radius:50%;background:var(--orange);border:none;display:grid;place-items:center;animation:pulse-ring 2.2s infinite;transition:transform .25s}
 .play-btn:hover{transform:scale(1.1)}
-.play-btn svg{width:30px;height:30px;fill:#fff;margin-left:5px}
 
 /* ============ TEAM ============ */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
@@ -274,8 +274,8 @@ html[data-theme="dark"] .role-chip{color:#ffb38a}
 .acc{border:1px solid var(--line);border-radius:18px;background:var(--bg-2);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .3s}
 .acc.open{box-shadow:var(--shadow-md)}
 .acc .q{width:100%;background:none;border:none;text-align:left;font-size:1rem;font-weight:700;color:var(--ink);padding:22px 58px 22px 24px;position:relative}
-.acc .q::after{content:"";position:absolute;right:22px;top:50%;width:26px;height:26px;transform:translateY(-50%);border-radius:50%;background:var(--orange-tint) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23e8570f" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') center/13px no-repeat;transition:transform .35s}
-.acc.open .q::after{transform:translateY(-50%) rotate(45deg)}
+.acc .q i.plus-i{position:absolute;right:22px;top:50%;transform:translateY(-50%);width:24px;height:24px;color:var(--orange);transition:transform .35s;stroke-width:2.6}
+.acc.open .q i.plus-i{transform:translateY(-50%) rotate(45deg)}
 .acc .a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.7,.3,1)}
 .acc .a>div{padding:0 24px 24px;color:var(--ink-soft);font-size:.94rem}
 
@@ -355,12 +355,13 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 /* ============ FLOATING WA ============ */
 .wa-float{position:fixed;bottom:26px;right:26px;z-index:180;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform .25s}
 .wa-float:hover{transform:scale(1.12)}
-.wa-float svg{width:28px;height:28px;fill:#fff}
+.wa-float i[data-lucide]{width:28px;height:28px;color:#fff;stroke-width:2}
 
 /* ============ BACK TO TOP ============ */
 #totop{position:fixed;bottom:96px;right:32px;z-index:180;width:44px;height:44px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);box-shadow:var(--shadow-md);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;font-size:1.1rem;color:var(--ink)}
 #totop.show{opacity:1;pointer-events:auto}
 #totop:hover{transform:translateY(-4px)}
+#totop i[data-lucide]{width:18px;height:18px;color:var(--ink);stroke-width:2.4}
 
 /* ============ TREATMENT FINDER ============ */
 .finder{max-width:820px;margin:60px auto 0;background:var(--bg-2);border:1px solid var(--line);border-radius:26px;padding:38px;box-shadow:var(--shadow-md)}
@@ -383,7 +384,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 /* ============ CHATBOT ============ */
 .chat-fab{position:fixed;bottom:26px;right:26px;z-index:240;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--orange));border:none;box-shadow:0 14px 36px rgba(28,79,216,.45);display:grid;place-items:center;transition:transform .25s;animation:pulse-ring 3s infinite}
 .chat-fab:hover{transform:scale(1.1)}
-.chat-fab svg{width:30px;height:30px;fill:#fff}
+.chat-fab i[data-lucide]{width:30px;height:30px;color:#fff;stroke-width:2.2}
 .chat-fab .close-ic{display:none}
 .chat-fab.open .chat-ic{display:none}
 .chat-fab.open .close-ic{display:block}
@@ -414,7 +415,16 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 .chat-input input:focus{border-color:var(--blue)}
 .chat-send{width:44px;height:44px;border-radius:50%;background:var(--orange);border:none;display:grid;place-items:center;flex:none;transition:transform .2s}
 .chat-send:hover{transform:scale(1.08)}
-.chat-send svg{width:19px;height:19px;fill:#fff}
+.chat-send i[data-lucide]{width:19px;height:19px;color:#fff;stroke-width:2.2}
+.pill i[data-lucide],.topstrip i[data-lucide]{width:15px;height:15px;display:inline-block;vertical-align:-2px;margin-right:6px;stroke-width:2.4;flex:none}
+.btn i[data-lucide]{width:17px;height:17px;display:inline-block;vertical-align:-2px;margin-right:4px;stroke-width:2.2;flex:none}
+.fc1 .h i[data-lucide],.fc3 .h i[data-lucide]{width:17px;height:17px;display:inline-block;vertical-align:-3px;margin-right:5px;stroke-width:2.4;color:var(--blue)}
+.fc3 .h i[data-lucide]{color:var(--orange)}
+.snap h3 i[data-lucide]{width:24px;height:24px;display:inline-block;vertical-align:-4px;margin-right:7px;stroke-width:2;color:var(--blue);flex:none}
+.fchips i[data-lucide],.msg i[data-lucide]{width:16px;height:16px;display:inline-block;vertical-align:-2px;margin-right:5px;stroke-width:2.2;flex:none}
+.fc-head i[data-lucide],h3 i[data-lucide]{width:22px;height:22px;display:inline-block;vertical-align:-4px;margin-right:7px;stroke-width:2.2;color:var(--blue)}
+.chat-head .av i[data-lucide]{width:24px;height:24px;color:#fff;stroke-width:2;margin:0;align-self:center}
+.theme-btn i[data-lucide]{width:20px;height:20px;color:var(--ink);stroke-width:2}
 .chat-note{font-size:.66rem;color:#a39a86;text-align:center;padding:0 14px 10px;background:#fff;flex:none}
 
 /* ============ RESPONSIVE ============ */
@@ -458,11 +468,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 <!-- ======= TOP STRIP ======= -->
 <div class="topstrip">
   <div class="track"><span>
-    <b>🩺 Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
-    <b>🩺 Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
+    <b><i data-lucide="stethoscope"></i> Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
+    <b><i data-lucide="stethoscope"></i> Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
   </span><span>
-    <b>🩺 Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
-    <b>🩺 Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
+    <b><i data-lucide="stethoscope"></i> Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
+    <b><i data-lucide="stethoscope"></i> Dr. Kannan Athreya is back in Shenfield!</b> Consultation — £135 · Call us: <a href="tel:01277503503">01277 503 503</a>
   </span></div>
 </div>
 
@@ -487,7 +497,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
     <div class="nav-cta">
       <a class="btn btn-outline" href="tel:01277503503">01277 503 503</a>
       <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Online</a>
-      <button class="theme-btn" id="theme-btn" aria-label="Switch theme">🌙</button>
+      <button class="theme-btn" id="theme-btn" aria-label="Switch theme"><i data-lucide="moon"></i></button>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -503,7 +513,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
     <div class="container">
       <div>
         <div class="hero-badges reveal">
-          <span class="pill glow">🩺 Private GP Services · Advanced Digital Mole Mapping</span>
+          <span class="pill glow"><i data-lucide="stethoscope"></i> Private GP Services · Advanced Digital Mole Mapping</span>
           <span class="pill"><b>CQC</b> Regulated</span>
           <span class="pill">Shenfield · Brentwood</span>
         </div>
@@ -511,8 +521,8 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <p class="lead reveal">Welcome to your local clinic at 40 Hutton Road, Shenfield — trusted family doctors, advanced dermatology, digital full-body mole mapping and doctor-led aesthetics, all in one place.</p>
         <div class="hero-actions reveal">
           <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book an Appointment</a>
-          <a class="btn btn-soft" href="#finder" onclick="event.preventDefault();document.getElementById('finder').scrollIntoView({behavior:'smooth'})">🧭 Find My Treatment</a>
-          <button class="btn btn-soft" onclick="toggleChat(true)">💬 Ask our AI Assistant</button>
+          <a class="btn btn-soft" href="#finder" onclick="event.preventDefault();document.getElementById('finder').scrollIntoView({behavior:'smooth'})"><i data-lucide="compass"></i> Find My Treatment</a>
+          <button class="btn btn-soft" onclick="toggleChat(true)"><i data-lucide="message-circle"></i> Ask our AI Assistant</button>
         </div>
       </div>
       <div class="hero-visual reveal-r">
@@ -520,9 +530,9 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
           <div class="scanline"></div>
           <img src="https://www.shenfieldprivategp.com/assets/img/modern_gp_clinic_interaction_no_faces_1767990325301.webp" alt="Inside the clinic">
         </div>
-        <div class="float-card fc1"><div class="h">🩺 GP Consultation</div><div class="s">Unhurried appointments · £135</div></div>
-        <div class="float-card fc2"><div class="h"><svg width="17" height="17" viewBox="0 0 24 24" style="display:inline-block;vertical-align:-3px;margin-right:5px" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6" fill="none" stroke="#1c4fd8" stroke-width="2.6"/><circle cx="9.5" cy="9.5" r="2.6" fill="#e8570f"/><path d="M14.2 14.2 L20.5 20.5" stroke="#1c4fd8" stroke-width="3.2" stroke-linecap="round"/></svg>Digital Mole Mapping</div><div class="s">Early detection technology</div></div>
-        <div class="float-card fc3"><div class="h">✨ Doctor-led Aesthetics</div><div class="s">Natural, subtle results</div></div>
+        <div class="float-card fc1"><div class="h"><i data-lucide="stethoscope"></i> GP Consultation</div><div class="s">Unhurried appointments · £135</div></div>
+        <div class="float-card fc2"><div class="h"><i data-lucide="search" style="display:inline-block;vertical-align:-1px;margin-right:5px;width:15px;height:15px;color:#1c4fd8;stroke-width:2.6"></i>Digital Mole Mapping</div><div class="s">Early detection technology</div></div>
+        <div class="float-card fc3"><div class="h"><i data-lucide="sparkles"></i> Doctor-led Aesthetics</div><div class="s">Natural, subtle results</div></div>
       </div>
     </div>
   </section>
@@ -583,7 +593,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 
       <!-- SMART TREATMENT FINDER -->
       <div class="finder reveal" id="finder">
-        <h3>🧭 Not sure what you need? Try the Smart Treatment Finder</h3>
+        <h3><i data-lucide="compass"></i> Not sure what you need? Try the Smart Treatment Finder</h3>
         <p class="fq" id="finder-q">What brings you in today?</p>
         <div class="fchips" id="finder-chips"></div>
         <div class="fresult" id="finder-result"></div>
@@ -604,11 +614,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2 class="title">Healthcare that knows you by name</h2>
         <p class="sub">We measure our success only by the care we give and the trust placed in us. Every appointment is unhurried, every plan is personal, and you'll see the same doctors visit after visit.</p>
         <ul class="checklist">
-          <li>Experienced, popular local doctors with decades of clinical expertise</li>
-          <li>Same-day appointments for urgent medical needs</li>
-          <li>Advanced skin diagnostics led by an international expert in dermoscopy</li>
-          <li>Family-friendly practice welcoming all ages</li>
-          <li>Modern facilities with state-of-the-art equipment</li>
+          <li><i class="luc" data-lucide="check"></i>Experienced, popular local doctors with decades of clinical expertise</li>
+          <li><i class="luc" data-lucide="check"></i>Same-day appointments for urgent medical needs</li>
+          <li><i class="luc" data-lucide="check"></i>Advanced skin diagnostics led by an international expert in dermoscopy</li>
+          <li><i class="luc" data-lucide="check"></i>Family-friendly practice welcoming all ages</li>
+          <li><i class="luc" data-lucide="check"></i>Modern facilities with state-of-the-art equipment</li>
         </ul>
         <div style="margin-top:28px"><a class="btn btn-blue" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Your Consultation</a></div>
       </div>
@@ -627,7 +637,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         </div>
         <div class="video-wrap">
           <video id="molevid-home" preload="metadata" playsinline controls src="https://aesthetk.com/wp-content/uploads/2024/02/Patient-Video-Total-Body-Mapping-Atbm-Master-Fotofindersystems-Subtitles-Audio-En.mp4#t=1.5"></video>
-          <div class="play-overlay" data-video="molevid-home"><button class="play-btn" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="play-overlay" data-video="molevid-home"><button class="play-btn" aria-label="Play video"><i data-lucide="play" fill="#fff" stroke="#fff" stroke-width="0"></i></button></div>
         </div>
       </div>
     </div>
@@ -697,11 +707,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>GP Consultations &amp; Minor Illnesses</h2>
         <p class="body">Fast access to private GP appointments for acute health concerns — without long waiting times. Every appointment is unhurried, with time to listen properly, examine thoroughly and plan clearly.</p>
         <ul class="checklist">
-          <li>Same-day appointments for acute concerns</li>
-          <li>Assessment of infections, rashes, fevers and minor injuries</li>
-          <li>Private prescriptions issued when clinically appropriate</li>
-          <li>Clear advice, reassurance and safety-netting</li>
-          <li>Home visits available within 3 miles (£400)</li>
+          <li><i class="luc" data-lucide="check"></i>Same-day appointments for acute concerns</li>
+          <li><i class="luc" data-lucide="check"></i>Assessment of infections, rashes, fevers and minor injuries</li>
+          <li><i class="luc" data-lucide="check"></i>Private prescriptions issued when clinically appropriate</li>
+          <li><i class="luc" data-lucide="check"></i>Clear advice, reassurance and safety-netting</li>
+          <li><i class="luc" data-lucide="check"></i>Home visits available within 3 miles (£400)</li>
         </ul>
         <div class="price-line"><span class="chip hl">Consultation £135</span><span class="chip bl">Same-day appointments</span></div>
         <a class="btn btn-blue" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Now</a>
@@ -715,10 +725,10 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Long-Term Condition Management</h2>
         <p class="body">Ongoing, joined-up care for chronic conditions with one doctor who knows your history — not a different face every visit.</p>
         <ul class="checklist">
-          <li>Diabetes, asthma, hypertension, thyroid disorders and more</li>
-          <li>Personalised treatment plans tailored to your lifestyle</li>
-          <li>Medication reviews and optimisation</li>
-          <li>Regular monitoring, blood tests and follow-up</li>
+          <li><i class="luc" data-lucide="check"></i>Diabetes, asthma, hypertension, thyroid disorders and more</li>
+          <li><i class="luc" data-lucide="check"></i>Personalised treatment plans tailored to your lifestyle</li>
+          <li><i class="luc" data-lucide="check"></i>Medication reviews and optimisation</li>
+          <li><i class="luc" data-lucide="check"></i>Regular monitoring, blood tests and follow-up</li>
         </ul>
         <div class="price-line"><span class="chip hl">From £135</span><span class="chip bl">Continuity of care</span></div>
         <a class="btn btn-blue" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Now</a>
@@ -732,12 +742,12 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Health Checks &amp; Screening</h2>
         <p class="body">Preventive care that catches problems before they start — comprehensive assessments with full blood diagnostics and a detailed written report.</p>
         <ul class="checklist">
-          <li>Men's Health Check — £900 (incl. prostate &amp; cardiovascular screening)</li>
-          <li>Women's Health Check — £875 (incl. hormonal evaluation)</li>
-          <li>ECG heart rhythm analysis — £100</li>
-          <li>ECHO &amp; 24-hour blood pressure monitoring with our cardiac nurse</li>
-          <li>HGV / DVLA medicals — £250</li>
-          <li>Ear wax removal £65 + consultation</li>
+          <li><i class="luc" data-lucide="check"></i>Men's Health Check — £900 (incl. prostate &amp; cardiovascular screening)</li>
+          <li><i class="luc" data-lucide="check"></i>Women's Health Check — £875 (incl. hormonal evaluation)</li>
+          <li><i class="luc" data-lucide="check"></i>ECG heart rhythm analysis — £100</li>
+          <li><i class="luc" data-lucide="check"></i>ECHO &amp; 24-hour blood pressure monitoring with our cardiac nurse</li>
+          <li><i class="luc" data-lucide="check"></i>HGV / DVLA medicals — £250</li>
+          <li><i class="luc" data-lucide="check"></i>Ear wax removal £65 + consultation</li>
         </ul>
         <div class="price-line"><span class="chip hl">ECG £100</span><span class="chip bl">Detailed reports included</span></div>
         <a class="btn btn-blue" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Now</a>
@@ -751,10 +761,10 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Minor Surgery</h2>
         <p class="body">Safe, professional procedures under local anaesthetic — performed by experienced GPs and, for complex cases, a Consultant Plastic Surgeon. Cosmetic outcome is always respected with careful wound closure.</p>
         <ul class="checklist">
-          <li>Skin tags &amp; warts from £300 · mole excision from £400</li>
-          <li>Cyst excision from £500 (GP) / £895 (surgeon, up to 2cm)</li>
-          <li>Lipoma excision £895 · punch biopsy £450</li>
-          <li>Mole shave £450 · histology from £150</li>
+          <li><i class="luc" data-lucide="check"></i>Skin tags &amp; warts from £300 · mole excision from £400</li>
+          <li><i class="luc" data-lucide="check"></i>Cyst excision from £500 (GP) / £895 (surgeon, up to 2cm)</li>
+          <li><i class="luc" data-lucide="check"></i>Lipoma excision £895 · punch biopsy £450</li>
+          <li><i class="luc" data-lucide="check"></i>Mole shave £450 · histology from £150</li>
         </ul>
         <div class="price-line"><span class="chip hl">From £300</span><span class="chip bl">Histology available</span><span class="chip">Local anaesthetic</span></div>
         <a class="btn btn-blue" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Now</a>
@@ -767,10 +777,10 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
     <div class="container" style="max-width:860px">
       <div class="center reveal"><div class="eyebrow">Good to know</div><h2 class="title">GP appointment FAQs</h2></div>
       <div style="margin-top:40px" data-stagger>
-        <div class="acc"><button class="q">How do I book an appointment?</button><div class="a"><div>Book online in under a minute, call 01277 503 503, or message us on WhatsApp. We offer same-day appointments for urgent needs and advance booking for routine care.</div></div></div>
-        <div class="acc"><button class="q">What should I bring to my appointment?</button><div class="a"><div>A valid photo ID, proof of address, a list of current medications, and any relevant medical records or test results from other providers.</div></div></div>
-        <div class="acc"><button class="q">Do you offer urgent appointments?</button><div class="a"><div>Yes — we reserve same-day slots for urgent medical needs. Please call early in the morning to secure an urgent appointment.</div></div></div>
-        <div class="acc"><button class="q">Is the clinic wheelchair accessible?</button><div class="a"><div>We are located on the first floor and the building does not currently have wheelchair access. Please contact us in advance to discuss mobility or accessibility needs — we will make every reasonable effort to find suitable arrangements.</div></div></div>
+        <div class="acc"><button class="q">How do I book an appointment?<i class="plus-i" data-lucide="plus"></i></button><div class="a"><div>Book online in under a minute, call 01277 503 503, or message us on WhatsApp. We offer same-day appointments for urgent needs and advance booking for routine care.</div></div></div>
+        <div class="acc"><button class="q">What should I bring to my appointment?<i class="plus-i" data-lucide="plus"></i></button><div class="a"><div>A valid photo ID, proof of address, a list of current medications, and any relevant medical records or test results from other providers.</div></div></div>
+        <div class="acc"><button class="q">Do you offer urgent appointments?<i class="plus-i" data-lucide="plus"></i></button><div class="a"><div>Yes — we reserve same-day slots for urgent medical needs. Please call early in the morning to secure an urgent appointment.</div></div></div>
+        <div class="acc"><button class="q">Is the clinic wheelchair accessible?<i class="plus-i" data-lucide="plus"></i></button><div class="a"><div>We are located on the first floor and the building does not currently have wheelchair access. Please contact us in advance to discuss mobility or accessibility needs — we will make every reasonable effort to find suitable arrangements.</div></div></div>
       </div>
     </div>
   </section>
@@ -809,7 +819,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
       <div class="media reveal-l">
         <div class="video-wrap" style="border-radius:24px;overflow:hidden;min-height:320px;position:relative;box-shadow:var(--shadow-md)">
           <video id="molevid" preload="metadata" playsinline controls src="https://aesthetk.com/wp-content/uploads/2024/02/Patient-Video-Total-Body-Mapping-Atbm-Master-Fotofindersystems-Subtitles-Audio-En.mp4#t=1.5"></video>
-          <div class="play-overlay" data-video="molevid"><button class="play-btn" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="play-overlay" data-video="molevid"><button class="play-btn" aria-label="Play video"><i data-lucide="play" fill="#fff" stroke="#fff" stroke-width="0"></i></button></div>
         </div>
         <p style="font-size:.8rem;color:var(--ink-soft);margin-top:10px">▶ Watch: what's involved in total body mapping (2 min)</p>
       </div>
@@ -818,12 +828,12 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Digital Full-Body Mole Mapping</h2>
         <p class="body">Your skin tells a story. Using cutting-edge full-body digital dermoscopy, we detect and diagnose suspicious lesions at the earliest possible stage — with high-quality images captured at every visit for precise comparison over time.</p>
         <ul class="checklist">
-          <li>Expert-led dermoscopy by Dr K — international academic expert</li>
-          <li>Automated camera captures your whole body in minutes</li>
-          <li>Images digitally stitched into a complete mole map</li>
-          <li>Microimaging of any moles of concern</li>
-          <li>Same-visit review with written report — sharable with your GP or for NHS/private referral</li>
-          <li>Personalised recall: 3–6 months or annually based on your risk</li>
+          <li><i class="luc" data-lucide="check"></i>Expert-led dermoscopy by Dr K — international academic expert</li>
+          <li><i class="luc" data-lucide="check"></i>Automated camera captures your whole body in minutes</li>
+          <li><i class="luc" data-lucide="check"></i>Images digitally stitched into a complete mole map</li>
+          <li><i class="luc" data-lucide="check"></i>Microimaging of any moles of concern</li>
+          <li><i class="luc" data-lucide="check"></i>Same-visit review with written report — sharable with your GP or for NHS/private referral</li>
+          <li><i class="luc" data-lucide="check"></i>Personalised recall: 3–6 months or annually based on your risk</li>
         </ul>
         <div class="price-line"><span class="chip hl">Digital mapping £350</span><span class="chip">Screening £250</span><span class="chip">Single mole check £135</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Mole Mapping</a>
@@ -850,12 +860,12 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Common Skin &amp; Hair Conditions</h2>
         <p class="body">Expert diagnosis and management of everyday skin and hair concerns — by GPs with specialist dermatology qualifications and years of clinical experience.</p>
         <ul class="checklist">
-          <li>Acne and acne scarring</li>
-          <li>Eczema and dermatitis — including childhood eczema</li>
-          <li>Psoriasis and rosacea</li>
-          <li>Hair loss assessment and treatment</li>
-          <li>Pigmentation, blemishes and uneven skin tone</li>
-          <li>Clear management plans, referrals and follow-up where needed</li>
+          <li><i class="luc" data-lucide="check"></i>Acne and acne scarring</li>
+          <li><i class="luc" data-lucide="check"></i>Eczema and dermatitis — including childhood eczema</li>
+          <li><i class="luc" data-lucide="check"></i>Psoriasis and rosacea</li>
+          <li><i class="luc" data-lucide="check"></i>Hair loss assessment and treatment</li>
+          <li><i class="luc" data-lucide="check"></i>Pigmentation, blemishes and uneven skin tone</li>
+          <li><i class="luc" data-lucide="check"></i>Clear management plans, referrals and follow-up where needed</li>
         </ul>
         <div class="price-line"><span class="chip hl">Consultation £135</span><span class="chip bl">Dermoscopy included</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Consultation</a>
@@ -870,11 +880,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>The Skin Clinic</h2>
         <p class="body">A sanctuary of rejuvenation where medical and cosmetic skin care come together. We address far more than wrinkles — from benign lesions and acne to excessive sweating and migraines, with a personalised care plan for every patient.</p>
         <ul class="checklist">
-          <li>Anti-wrinkle treatments — forehead, frown, crow's feet, gummy smile, chin, jaw slimming &amp; more (from £225)</li>
-          <li>Diagnosis &amp; management of acne, eczema, psoriasis, rosacea</li>
-          <li>Skin blemish &amp; pigmentation treatment</li>
-          <li>Under-eye care — Lumi Eyes, Nucleofill, Plinest (from £185)</li>
-          <li>Migraine treatment £550 · bruxism (teeth grinding) £425</li>
+          <li><i class="luc" data-lucide="check"></i>Anti-wrinkle treatments — forehead, frown, crow's feet, gummy smile, chin, jaw slimming &amp; more (from £225)</li>
+          <li><i class="luc" data-lucide="check"></i>Diagnosis &amp; management of acne, eczema, psoriasis, rosacea</li>
+          <li><i class="luc" data-lucide="check"></i>Skin blemish &amp; pigmentation treatment</li>
+          <li><i class="luc" data-lucide="check"></i>Under-eye care — Lumi Eyes, Nucleofill, Plinest (from £185)</li>
+          <li><i class="luc" data-lucide="check"></i>Migraine treatment £550 · bruxism (teeth grinding) £425</li>
         </ul>
         <div class="price-line"><span class="chip hl">Anti-wrinkle from £225</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Consultation</a>
@@ -889,13 +899,13 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Skin Boosters, Polynucleotides &amp; Fillers</h2>
         <p class="body">Deeply hydrate, firm and revitalise — advanced treatments that stimulate your skin's own collagen and elastin for a natural, dewy glow that still looks like you.</p>
         <ul class="checklist">
-          <li><b>Profhilo</b> — hydration &amp; firmness for face, neck, hands (£295 · 2 sessions £550)</li>
-          <li><b>Sunekos</b> — dark circles, bags &amp; fine lines (£265 · 3 sessions £725)</li>
-          <li><b>Restylane</b> — elasticity &amp; sun damage repair (£265)</li>
-          <li><b>Polynucleotides / Nucleofill</b> — cellular renewal (from £275)</li>
-          <li><b>Radiesse</b> — biostimulatory filler for cheeks, jawline, hands (from £550)</li>
-          <li><b>Dermal fillers</b> — lips from £200, cheeks &amp; temples £350, jawline £300</li>
-          <li>Tear trough rejuvenation, profile balancing &amp; elective dissolving</li>
+          <li><i class="luc" data-lucide="check"></i><b>Profhilo</b> — hydration &amp; firmness for face, neck, hands (£295 · 2 sessions £550)</li>
+          <li><i class="luc" data-lucide="check"></i><b>Sunekos</b> — dark circles, bags &amp; fine lines (£265 · 3 sessions £725)</li>
+          <li><i class="luc" data-lucide="check"></i><b>Restylane</b> — elasticity &amp; sun damage repair (£265)</li>
+          <li><i class="luc" data-lucide="check"></i><b>Polynucleotides / Nucleofill</b> — cellular renewal (from £275)</li>
+          <li><i class="luc" data-lucide="check"></i><b>Radiesse</b> — biostimulatory filler for cheeks, jawline, hands (from £550)</li>
+          <li><i class="luc" data-lucide="check"></i><b>Dermal fillers</b> — lips from £200, cheeks &amp; temples £350, jawline £300</li>
+          <li><i class="luc" data-lucide="check"></i>Tear trough rejuvenation, profile balancing &amp; elective dissolving</li>
         </ul>
         <div class="price-line"><span class="chip hl">From £185</span><span class="chip bl">Package prices available</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Consultation</a>
@@ -909,10 +919,10 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Personalised Weight Management</h2>
         <p class="body">Doctor-led weight loss programmes to transform your life. Obesity is complex — genetics, physiology and environment all play a part. We treat it as the chronic condition it is, never a lack of self-control.</p>
         <ul class="checklist">
-          <li>Weekly injectable medication (Mounjaro &amp; Wegovy) — reduces appetite &amp; cravings</li>
-          <li>Nutritional guidance for sustainable, healthy loss</li>
-          <li>Support from doctors, dieticians and personal trainers</li>
-          <li>Eligibility: 18+, BMI over 30 (or 27+ with a weight-related condition)</li>
+          <li><i class="luc" data-lucide="check"></i>Weekly injectable medication (Mounjaro &amp; Wegovy) — reduces appetite &amp; cravings</li>
+          <li><i class="luc" data-lucide="check"></i>Nutritional guidance for sustainable, healthy loss</li>
+          <li><i class="luc" data-lucide="check"></i>Support from doctors, dieticians and personal trainers</li>
+          <li><i class="luc" data-lucide="check"></i>Eligibility: 18+, BMI over 30 (or 27+ with a weight-related condition)</li>
         </ul>
         <div class="price-line"><span class="chip hl">Consultation £135</span><span class="chip bl">Doctor-led programme</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Weight Consultation</a>
@@ -944,10 +954,10 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Hyperhidrosis (Excessive Sweating)</h2>
         <p class="body">Excessive sweating doesn't have to control your life. Our non-invasive treatment blocks sweat-stimulating nerves — restoring comfort and confidence in a discreet, understanding environment.</p>
         <ul class="checklist">
-          <li>Expert assessment of hands, feet, underarms and face</li>
-          <li>Precise botulinum toxin injections</li>
-          <li>Tailored lifestyle guidance on managing triggers</li>
-          <li>Regular follow-up to ensure optimal results</li>
+          <li><i class="luc" data-lucide="check"></i>Expert assessment of hands, feet, underarms and face</li>
+          <li><i class="luc" data-lucide="check"></i>Precise botulinum toxin injections</li>
+          <li><i class="luc" data-lucide="check"></i>Tailored lifestyle guidance on managing triggers</li>
+          <li><i class="luc" data-lucide="check"></i>Regular follow-up to ensure optimal results</li>
         </ul>
         <div class="price-line"><span class="chip hl">From £495</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Consultation</a>
@@ -962,11 +972,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>Skin Lesion &amp; Mole Removal</h2>
         <p class="body">Expert removal of moles, skin tags, warts and other irregularities — whether for medical reasons or cosmetic confidence. Precise techniques, minimal downtime, and histology arranged where clinically indicated.</p>
         <ul class="checklist">
-          <li>Skin tags, warts, verrucae &amp; seborrhoeic keratosis from £250</li>
-          <li>Age spots, xanthelasma, blood spots &amp; red veins</li>
-          <li>Mole removal by GP (from £400) or Consultant Plastic Surgeon (£550)</li>
-          <li>Cysts &amp; lipomas up to 2cm (£895, surgeon-led)</li>
-          <li>Careful wound closure respecting cosmetic outcome</li>
+          <li><i class="luc" data-lucide="check"></i>Skin tags, warts, verrucae &amp; seborrhoeic keratosis from £250</li>
+          <li><i class="luc" data-lucide="check"></i>Age spots, xanthelasma, blood spots &amp; red veins</li>
+          <li><i class="luc" data-lucide="check"></i>Mole removal by GP (from £400) or Consultant Plastic Surgeon (£550)</li>
+          <li><i class="luc" data-lucide="check"></i>Cysts &amp; lipomas up to 2cm (£895, surgeon-led)</li>
+          <li><i class="luc" data-lucide="check"></i>Careful wound closure respecting cosmetic outcome</li>
         </ul>
         <div class="price-line"><span class="chip hl">From £250</span><span class="chip bl">Histology available</span></div>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Consultation</a>
@@ -1148,7 +1158,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <p>Secure online booking, available 24/7. Choose your doctor, service and time — instant confirmation.</p>
         <a class="btn btn-orange" href="https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180" target="_blank" rel="noopener">Book Your Appointment</a>
         <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" href="tel:01277503503">Or call 01277 503 503</a>
-        <button class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" onclick="toggleChat(true)">💬 Ask the AI Assistant</button>
+        <button class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" onclick="toggleChat(true)"><i data-lucide="message-circle"></i> Ask the AI Assistant</button>
       </div>
     </div>
   </section>
@@ -1162,7 +1172,7 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
     <div class="container">
       <div class="crumb reveal"><a href="#/">Home</a> / Join Our Team</div>
       <div class="hero-badges reveal" style="margin-bottom:14px">
-        <span class="pill glow">🚀 We're growing — GPs wanted</span>
+        <span class="pill glow"><i data-lucide="rocket"></i> We're growing — GPs wanted</span>
         <span class="pill"><b>CQC</b> Regulated</span>
         <span class="pill">Shenfield · Brentwood</span>
       </div>
@@ -1207,11 +1217,11 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2 class="title">Medicine with the joy put back in</h2>
         <p class="sub">Our team is expanding, and we're looking for GPs who still love the craft of general practice. Here you'll have the time, tools and trust to look after patients properly — and to grow your own special interests along the way.</p>
         <ul class="checklist">
-          <li>Unhurried 30-minute appointments — time to actually listen</li>
-          <li>Genuine continuity: you'll see your own patients again and again</li>
-          <li>A modern, CQC-regulated clinic with state-of-the-art equipment</li>
-          <li>Mentorship in dermoscopy, mole mapping and aesthetics from Dr K</li>
-          <li>No box-ticking targets — just good, patient-centred care</li>
+          <li><i class="luc" data-lucide="check"></i>Unhurried 30-minute appointments — time to actually listen</li>
+          <li><i class="luc" data-lucide="check"></i>Genuine continuity: you'll see your own patients again and again</li>
+          <li><i class="luc" data-lucide="check"></i>A modern, CQC-regulated clinic with state-of-the-art equipment</li>
+          <li><i class="luc" data-lucide="check"></i>Mentorship in dermoscopy, mole mapping and aesthetics from Dr K</li>
+          <li><i class="luc" data-lucide="check"></i>No box-ticking targets — just good, patient-centred care</li>
         </ul>
         <div style="margin-top:28px"><a class="btn btn-orange" href="#careers-apply" onclick="event.preventDefault();document.getElementById('careers-apply').scrollIntoView({behavior:'smooth'})">Start Your Application</a></div>
       </div>
@@ -1227,12 +1237,12 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <p class="sub">We invest in our people — because looked-after doctors look after patients best.</p>
       </div>
       <div class="snap-grid" data-stagger style="margin-top:44px">
-        <div class="snap" style="cursor:default"><div class="body"><h3>💷 Competitive rewards</h3><p>Attractive sessional or salaried rates, with earning potential that grows as you develop private and aesthetic special interests.</p></div></div>
-        <div class="snap" style="cursor:default"><div class="body"><h3>🕒 Flexible sessions</h3><p>Full-time, part-time or ad-hoc sessions to fit around your life. Tell us what works and we'll build a rota around it.</p></div></div>
-        <div class="snap" style="cursor:default"><div class="body"><h3>📈 Real development</h3><p>Hands-on training and mentorship in dermoscopy, minor surgery, weight management and doctor-led aesthetics.</p></div></div>
-        <div class="snap" style="cursor:default"><div class="body"><h3>🤝 Supportive team</h3><p>A friendly, close-knit team — experienced clinicians, a dedicated practice team, and leadership that has your back.</p></div></div>
-        <div class="snap" style="cursor:default"><div class="body"><h3>🏥 Modern clinic</h3><p>Purpose-fitted rooms, digital total-body imaging and the latest equipment — the tools to practise at your best.</p></div></div>
-        <div class="snap" style="cursor:default"><div class="body"><h3>🌱 Room to grow</h3><p>We're expanding fast. Get in early and help shape services, systems and your own long-term role with us.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="banknote"></i> Competitive rewards</h3><p>Attractive sessional or salaried rates, with earning potential that grows as you develop private and aesthetic special interests.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="clock"></i> Flexible sessions</h3><p>Full-time, part-time or ad-hoc sessions to fit around your life. Tell us what works and we'll build a rota around it.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="trending-up"></i> Real development</h3><p>Hands-on training and mentorship in dermoscopy, minor surgery, weight management and doctor-led aesthetics.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="handshake"></i> Supportive team</h3><p>A friendly, close-knit team — experienced clinicians, a dedicated practice team, and leadership that has your back.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="building-2"></i> Modern clinic</h3><p>Purpose-fitted rooms, digital total-body imaging and the latest equipment — the tools to practise at your best.</p></div></div>
+        <div class="snap" style="cursor:default"><div class="body"><h3><i data-lucide="sprout"></i> Room to grow</h3><p>We're expanding fast. Get in early and help shape services, systems and your own long-term role with us.</p></div></div>
       </div>
     </div>
   </section>
@@ -1246,12 +1256,12 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
         <h2>General Practitioner (GP)</h2>
         <p class="body">We're looking for enthusiastic, patient-first GPs to join our growing private practice in Shenfield. Whether you're a seasoned GP or newly qualified and eager to learn, you'll find a home here.</p>
         <ul class="checklist">
-          <li>Deliver unhurried private GP consultations across all ages</li>
-          <li>Manage minor illness, chronic conditions and health screening</li>
-          <li>Opportunity to train in dermoscopy, minor surgery &amp; aesthetics</li>
-          <li>GMC registration with a licence to practise &amp; on the GP Register</li>
-          <li>MRCGP (or equivalent) and current medical indemnity</li>
-          <li>Warm, professional manner and a genuine love of patient care</li>
+          <li><i class="luc" data-lucide="check"></i>Deliver unhurried private GP consultations across all ages</li>
+          <li><i class="luc" data-lucide="check"></i>Manage minor illness, chronic conditions and health screening</li>
+          <li><i class="luc" data-lucide="check"></i>Opportunity to train in dermoscopy, minor surgery &amp; aesthetics</li>
+          <li><i class="luc" data-lucide="check"></i>GMC registration with a licence to practise &amp; on the GP Register</li>
+          <li><i class="luc" data-lucide="check"></i>MRCGP (or equivalent) and current medical indemnity</li>
+          <li><i class="luc" data-lucide="check"></i>Warm, professional manner and a genuine love of patient care</li>
         </ul>
         <div class="price-line"><span class="chip hl">Full or part-time</span><span class="chip bl">Flexible sessions</span><span class="chip">Shenfield, Essex</span></div>
         <a class="btn btn-orange" href="#careers-apply" onclick="event.preventDefault();document.getElementById('careers-apply').scrollIntoView({behavior:'smooth'})">Apply for This Role</a>
@@ -1297,9 +1307,9 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
       <div class="book-box reveal-r">
         <h3>Prefer to reach out directly?</h3>
         <p>We'd love to hear from you. Send your CV or ask us anything about joining the team.</p>
-        <a class="btn btn-orange" href="mailto:drk@aesthetk.com?subject=GP%20Application%20—%20Join%20Your%20Team">✉️ Email drk@aesthetk.com</a>
-        <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" href="tel:01277503503">📞 Call 01277 503 503</a>
-        <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" href="https://wa.me/447769310217" target="_blank" rel="noopener">💬 WhatsApp us</a>
+        <a class="btn btn-orange" href="mailto:drk@aesthetk.com?subject=GP%20Application%20—%20Join%20Your%20Team"><i data-lucide="mail"></i> Email drk@aesthetk.com</a>
+        <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" href="tel:01277503503"><i data-lucide="phone"></i> Call 01277 503 503</a>
+        <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff" href="https://wa.me/447769310217" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp us</a>
       </div>
     </div>
   </section>
@@ -1363,14 +1373,14 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
 </footer>
 
 <a class="wa-float" style="right:auto;left:26px" href="https://wa.me/447769310217" target="_blank" rel="noopener" aria-label="WhatsApp us">
-  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.6.8 5 2.2 7L4 29l7.2-2.1c1.9 1 4 1.6 6.3 1.6h.5c6.6 0 12-5.4 12-12S22.6 3 16 3zm7 17c-.3.8-1.7 1.6-2.4 1.7-.6.1-1.4.1-2.2-.1-.5-.2-1.2-.4-2-.8-3.5-1.5-5.8-5-6-5.3-.2-.2-1.4-1.9-1.4-3.6s.9-2.6 1.2-2.9c.3-.3.7-.4 1-.4h.7c.2 0 .5-.1.8.6.3.8 1.1 2.6 1.2 2.7.1.2.2.4 0 .7-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.2.8.2.3 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.4.2.6.1.8-.1.2-.2 1-1.1 1.2-1.5.3-.4.5-.3.9-.2.3.1 2.2 1 2.5 1.2.4.2.6.3.7.4.1.3.1.9-.2 1.7z"/></svg>
+  <i data-lucide="message-circle"></i>
 </a>
-<button id="totop" style="right:auto;left:32px" aria-label="Back to top">↑</button>
+<button id="totop" style="right:auto;left:32px" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
 <!-- ======= AI CLINIC ASSISTANT ======= -->
 <div class="chat-panel" id="chat-panel" role="dialog" aria-label="Clinic assistant">
   <div class="chat-head">
-    <div class="av">🤖</div>
+    <div class="av"><i data-lucide="bot"></i></div>
     <div>
       <div class="nm">Clinic Assistant</div>
       <div class="st">Online — instant answers</div>
@@ -1380,13 +1390,13 @@ footer{background:#0a101d;color:#c6c0b2;padding:64px 0 30px;font-size:.9rem}
   <div class="chat-chips" id="chat-chips"></div>
   <div class="chat-input">
     <input type="text" id="chat-in" placeholder="Ask about prices, services, hours…" autocomplete="off">
-    <button class="chat-send" id="chat-send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+    <button class="chat-send" id="chat-send" aria-label="Send"><i data-lucide="send"></i></button>
   </div>
   <div class="chat-note">Automated assistant — for medical advice please book a consultation or call 01277 503 503.</div>
 </div>
 <button class="chat-fab" id="chat-fab" onclick="toggleChat()" aria-label="Chat with our assistant">
-  <svg class="chat-ic" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6 2 11c0 2.4 1 4.5 2.7 6.1-.2 1.2-.8 2.6-1.6 3.6-.2.3 0 .7.4.7 2 0 3.8-.8 5-1.6 1.1.3 2.3.5 3.5.5 5.5 0 10-4 10-9S17.5 2 12 2zm-4 10.5c-.8 0-1.5-.7-1.5-1.5S7.2 9.5 8 9.5s1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm4 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm4 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/></svg>
-  <svg class="close-ic" viewBox="0 0 24 24"><path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg>
+  <i class="chat-ic" data-lucide="message-circle"></i>
+  <i class="close-ic" data-lucide="x"></i>
 </button>
 
 <script>
@@ -1528,12 +1538,12 @@ if(bmiGo)bmiGo.addEventListener('click',()=>{
 const BOOK='https://online-booking.semble.io/?token=5e6d085e959a9197e02e5d5221c11a74d50c9180';
 const finderTree={
   root:{q:'What brings you in today?',opts:[
-    ['🤒 I feel unwell / need a doctor','gp'],
-    ['🔍 Check a mole or my skin','mole'],
-    ['🧴 A skin or hair condition (acne, eczema, hair loss…)','derm'],
-    ['✨ Anti-ageing & aesthetics','aes'],
-    ['⚖️ Weight loss support','weight'],
-    ['💧 Excessive sweating','hyper']
+    ['<i data-lucide="thermometer"></i> I feel unwell / need a doctor','gp'],
+    ['<i data-lucide="search"></i> Check a mole or my skin','mole'],
+    ['<i data-lucide="droplets"></i> A skin or hair condition (acne, eczema, hair loss…)','derm'],
+    ['<i data-lucide="sparkles"></i> Anti-ageing & aesthetics','aes'],
+    ['<i data-lucide="scale"></i> Weight loss support','weight'],
+    ['<i data-lucide="droplet"></i> Excessive sweating','hyper']
   ]},
   mole:{q:'What would give you peace of mind?',opts:[
     ['One specific mole is worrying me','r-molecheck'],
@@ -1560,6 +1570,7 @@ const finderResults={
 };
 const fChips=document.getElementById('finder-chips'),fQ=document.getElementById('finder-q'),fRes=document.getElementById('finder-result'),fBack=document.getElementById('finder-back');
 function finderShow(node){
+  if(window.lucide)lucide.createIcons();
   fRes.classList.remove('show');fRes.innerHTML='';
   if(finderResults[node]){
     const r=finderResults[node];
@@ -1572,9 +1583,10 @@ function finderShow(node){
   fQ.style.display='block';fQ.textContent=n.q;
   fChips.innerHTML='';
   n.opts.forEach(([label,next])=>{
-    const b=document.createElement('button');b.className='fchip';b.textContent=label;
+    const b=document.createElement('button');b.className='fchip';b.innerHTML=label;
     b.onclick=()=>finderShow(next);fChips.appendChild(b);
   });
+  if(window.lucide)lucide.createIcons();
   fBack.style.display=node==='root'?'none':'inline';
 }
 fBack.addEventListener('click',()=>finderShow('root'));
@@ -1589,12 +1601,13 @@ function toggleChat(open){
   const willOpen=open===true?true:!chatPanel.classList.contains('open');
   chatPanel.classList.toggle('open',willOpen);
   chatFab.classList.toggle('open',willOpen);
-  if(willOpen&&!chatStarted){chatStarted=true;botSay("Hi! 👋 I'm the clinic assistant for <b>Shenfield Private GP | Aesthetk by Dr K</b>. Ask me anything — prices, services, opening hours, or what a treatment involves.");setChips(['Prices','Book an appointment','Opening hours','Mole mapping','Weight loss','Meet the doctors']);}
+  if(willOpen&&!chatStarted){chatStarted=true;botSay(`Hi! <i data-lucide="hand"></i> I'm the clinic assistant for <b>Shenfield Private GP | Aesthetk by Dr K</b>. Ask me anything — prices, services, opening hours, or what a treatment involves.`);setChips(['Prices','Book an appointment','Opening hours','Mole mapping','Weight loss','Meet the doctors']);}
   if(willOpen)setTimeout(()=>chatIn.focus(),350);
 }
 function addMsg(html,who){
   const d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;
-  chatMsgs.appendChild(d);chatMsgs.scrollTop=chatMsgs.scrollHeight;return d;
+  chatMsgs.appendChild(d);chatMsgs.scrollTop=chatMsgs.scrollHeight;
+  if(window.lucide)lucide.createIcons();return d;
 }
 function botSay(html,chips){
   const t=addMsg('<i></i><i></i><i></i>','bot typing');
@@ -1622,10 +1635,10 @@ const KB=[
   {k:['acne','eczema','psoriasis','rosacea','rash','skin condition','dermatolog','hair loss','hair'],a:`Our GPs have specialist dermatology qualifications and manage acne, eczema, psoriasis, rosacea, hair loss and more. A <b>dermatology consultation is £135</b> and includes dermoscopy examination and a personalised treatment plan. <a href="#/skin" data-anchor="sk-derm">Read more</a>.`,c:['Book an appointment','Mole mapping','Prices']},
   {k:['doctor','team','who','staff','dr k','khan','athreya','kannan','ayub','rakshit','surgeon','nurse','sarah','dennise','receptionist','manager'],a:`Our team:<ul><li><b>Dr Ayub Khan (Dr K)</b> — Medical Director; international academic expert in dermoscopy &amp; skin cancer detection</li><li><b>Dr Kannan Athreya</b> — GP with 30 years serving Brentwood</li><li><b>Mr Kaushik Rakshit</b> — Consultant Plastic Surgeon</li><li><b>Sarah Tappin</b> — Cosmetic Practitioner</li><li><b>Dennise Hughes</b> — Cardiac Nurse (ECG, ECHO, 24-hr BP)</li></ul>Supported by Karen Webster (Business Manager), Leigh Clancy (Clinic Manager) and receptionists Julie Rolph &amp; Rina Khan. <a href="#/team">Meet the team</a>.`,c:['Book an appointment','GP services','Mole mapping']},
   {k:['health check','screening','ecg','blood test','medical','hgv','check up','checkup'],a:`Health checks & screening:<ul><li>Men's Health Check — <b>£900</b></li><li>Women's Health Check — <b>£875</b></li><li>ECG — <b>£100</b></li><li>HGV/DVLA medical — <b>£250</b></li><li>Ear wax removal — £65 + consult</li></ul><a href="#/gp" data-anchor="gp-screening">Read more</a>.`,c:['Book an appointment','Prices']},
-  {k:['contact','phone','email','whatsapp','call'],a:`Get in touch:<ul><li>📞 <a href="tel:01277503503">01277 503 503</a></li><li>💬 <a href="https://wa.me/447769310217" target="_blank">WhatsApp +44 7769 310 217</a></li><li>✉️ contact@shenfieldprivategp.com · drk@aesthetk.com</li></ul>`,c:['Opening hours','Where are you?','Book an appointment']},
+  {k:['contact','phone','email','whatsapp','call'],a:`Get in touch:<ul><li><i data-lucide="phone"></i> <a href="tel:01277503503">01277 503 503</a></li><li><i data-lucide="message-circle"></i> <a href="https://wa.me/447769310217" target="_blank">WhatsApp +44 7769 310 217</a></li><li><i data-lucide="mail"></i> contact@shenfieldprivategp.com · drk@aesthetk.com</li></ul>`,c:['Opening hours','Where are you?','Book an appointment']},
   {k:['cqc','regulated','safe','insurance','registered'],a:`Yes — the clinic is operated by <b>Aesthetk Ltd</b>, a CQC-registered healthcare provider. You can view our registration on the <a href="https://www.cqc.org.uk/location/1-19882077109" target="_blank">CQC website</a>.`,c:['Meet the doctors','Book an appointment']},
-  {k:['emergency','urgent','999','a&e','chest pain'],a:`⚠️ If this is a medical emergency, please call <b>999</b> or go to A&E immediately. For urgent (non-emergency) appointments, call us early on <a href="tel:01277503503">01277 503 503</a> — we reserve same-day slots.`,c:['Book an appointment','Contact details']},
-  {k:['hello','hi','hey','morning','afternoon','thanks','thank you'],a:`Hello! 😊 How can I help today? You can ask me about services, prices, opening times or booking.`,c:['Prices','Book an appointment','Mole mapping','Weight loss']}
+  {k:['emergency','urgent','999','a&e','chest pain'],a:`<i data-lucide="triangle-alert"></i> If this is a medical emergency, please call <b>999</b> or go to A&E immediately. For urgent (non-emergency) appointments, call us early on <a href="tel:01277503503">01277 503 503</a> — we reserve same-day slots.`,c:['Book an appointment','Contact details']},
+  {k:['hello','hi','hey','morning','afternoon','thanks','thank you'],a:`Hello! <i data-lucide="smile"></i> How can I help today? You can ask me about services, prices, opening times or booking.`,c:['Prices','Book an appointment','Mole mapping','Weight loss']}
 ];
 function answer(text){
   const q=text.toLowerCase();
@@ -1657,7 +1670,8 @@ const themeBtn=document.getElementById('theme-btn');
 function setTheme(t){
   document.documentElement.dataset.theme=t;
   try{localStorage.setItem('spgp-theme',t)}catch(e){}
-  themeBtn.textContent=t==='dark'?'☀️':'🌙';
+  themeBtn.innerHTML=t==='dark'?'<i data-lucide="sun"></i>':'<i data-lucide="moon"></i>';
+  if(window.lucide)lucide.createIcons();
   themeBtn.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');
 }
 themeBtn.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
@@ -1682,5 +1696,6 @@ function careersSubmit(e){
 /* ============ INIT ============ */
 route();
 </script>
+<script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
 </body>
 </html>
